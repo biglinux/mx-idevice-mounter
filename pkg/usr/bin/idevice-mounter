@@ -106,7 +106,7 @@ class Idevmanager(QMainWindow):
         aboutBox.addButton("License", QMessageBox.NoRole)
         reply = aboutBox.exec_()
         if reply == 1:
-           p=subprocess.call(["/usr/bin/mx-viewer", "/usr/share/doc/mx-idevice-mounter/license.html", "MX iDevice Mounter license"])
+           p=subprocess.call(["xdg-open", "/usr/share/doc/mx-idevice-mounter/license.html", "MX iDevice Mounter license"])
 
     def displayHelp(self):
         lang=os.getenv('LANG')
@@ -116,7 +116,7 @@ class Idevmanager(QMainWindow):
         else:   
            helpurl="https://mxlinux.org/wiki/help-files/help-mx-idevice-mounter"
            helpheader="MX iDevice Mounter Help"
-        p=subprocess.call(["/usr/bin/mx-viewer", helpurl , helpheader])
+        p=subprocess.call(["xdg-open", helpurl])
 
     def initUI(self):               
         
